@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Validation\ValidationException;
 
 class UsersController extends Controller
 {
@@ -24,13 +25,19 @@ class UsersController extends Controller
             'password' => 'required|confirmed|min:6|max:20'
         ]);
 
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-        ]);
+        if (isset($request->name) &&
+            isset($request->email) &&
+            isset($request->password)) {
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => bcrypt($request->password),
+            ]);
 
-        session()->flash('success', '注册成功');
-        return redirect()->route('users.show', [$user]);
+            session()->flash('success', '注册成功');
+            return redirect()->route('users.show', [$user]);
+        }
+
+        return '参数不完整';
     }
 }
