@@ -15,8 +15,6 @@ Route::get('', 'StaticPagesController@home')->name('home');
 Route::get('help', 'StaticPagesController@help')->name('help');
 Route::get('about', 'StaticPagesController@about')->name('about');
 
-Route::get('signup', 'UsersController@create')->name('signup');
-
 /*
 请求    URL	                动作	                    作用
 GET	   /users	            UsersController@index	显示所有用户列表的页面
