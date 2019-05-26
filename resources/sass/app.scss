@@ -11,12 +11,12 @@ nav.navbar.navbar-expand-lg {
 }
 
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
   color: #777;
   font-size: 13px;
+  margin-top: 45px;
+  padding-top: 5px;
   font-weight: bold;
+  border-top: 1px solid #eaeaea;
 
   a {
     color: #555;
@@ -34,4 +34,30 @@ footer {
     width: 17px;
     height: 17px;
   }
+}
+
+/* User gravatar */
+
+section.user_info {
+  margin-top: 20px;
+  text-align: center;
+  padding-bottom: 10px;
+
+  .gravatar {
+    float: none;
+    max-width: 70px;
+  }
+
+  h1 {
+    font-size: 1.4em;
+    margin-top: 15px;
+    margin-bottom: 3px;
+    letter-spacing: -1px;
+  }
+}
+
+.gravatar {
+  float: left;
+  max-width: 50px;
+  border-radius: 50%;
 }
