@@ -4,9 +4,7 @@
 @section('content')
   <div class="col-md-8 offset-md-2">
     <div class="card">
-      <div class="card-header">
-        <h5>登录</h5>
-      </div>
+      <div class="card-header"><h5>登录</h5></div>
 
       <div class="card-body">
         @include('shared._errors')
