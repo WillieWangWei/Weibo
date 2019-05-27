@@ -28,4 +28,9 @@ class SessionsController extends Controller
             return Redirect::back()->withInput();
         }
     }
+
+    public function destroy()
+    {
+        return 'destroy';
+    }
 }
