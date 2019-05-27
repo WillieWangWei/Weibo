@@ -10,6 +10,10 @@ class SessionsController extends Controller
 {
     public function create()
     {
+        if (Auth::user())
+        {
+            return Redirect::route('users.show', Auth::user());
+        }
         return view('sessions.create');
     }
 
@@ -20,7 +24,7 @@ class SessionsController extends Controller
             'password' => 'required|min:6|max:20'
         ]);
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt($credentials, $request->has('remember'))) {
             session()->flash('success', '登录成功');
             return Redirect::route('users.show', [Auth::user()]);
         } else {
