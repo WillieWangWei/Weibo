@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
-use Illuminate\Validation\ValidationException;
+use App\Models\User;
 
 class UsersController extends Controller
 {
@@ -16,7 +16,7 @@ class UsersController extends Controller
         ]);
 
         $this->middleware('auth', [
-            'except' => ['create', 'show', 'store'],
+            'except' => ['create', 'show', 'store', 'index'],
         ]);
     }
     
@@ -72,5 +72,11 @@ class UsersController extends Controller
         session()->flash('success', '个人资料更新成功');
 
         return redirect()->route('users.show', $user);
+    }
+
+    public function index()
+    {
+        $users = User::paginate(10);
+        return view('users.index', compact('users'));
     }
 }

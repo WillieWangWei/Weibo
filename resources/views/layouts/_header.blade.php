@@ -5,7 +5,7 @@
 
       @if(Auth::check())
         <li class="nav-item">
-          <a class="nav-link" href="#">用户列表</a>
+          <a class="nav-link" href="{{ route('users.index') }}">用户列表</a>
         </li>
         <l class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
