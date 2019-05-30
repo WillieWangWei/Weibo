@@ -46,3 +46,17 @@ Route::get     ('signup/confirm/{token}', 'UsersController@confirmEmail')->name(
 Route::get('login',     'SessionsController@create') ->name('login');
 Route::post('login',    'SessionsController@store')  ->name('login');
 Route::delete('logout', 'SessionsController@destroy')->name('logout');
+
+/*
+ GET  /password/reset Auth\ForgotPasswordController@showLinkRequestForm 显示重置密码的邮箱发送页面
+ POST /password/email Auth\ForgotPasswordController@sendResetLinkEmail  邮箱发送重设链接
+*/
+Route::get('password/reset',  'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail') ->name('password.email');
+
+/*
+ GET  /password/reset/{token} Auth\ResetPasswordController@showResetForm 密码更新页面
+ POST /password/reset         Auth\ResetPasswordController@reset         执行密码更新操作
+*/
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset',        'Auth\ResetPasswordController@reset')        ->name('password.update');
