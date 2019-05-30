@@ -34,7 +34,9 @@ Route::get('about', 'StaticPagesController@about')->name('about');
  Route::patch ('/users/{user}',      'UsersController@update') ->name('users.update');
  Route::delete('/users/{user}',      'UsersController@destroy')->name('users.destroy');
 */
-Route::resource('users', 'UsersController');
+Route::resource('users',                'UsersController');
+Route::get     ('signup',                 'UsersController@create')      ->name('signup');
+Route::get     ('signup/confirm/{token}', 'UsersController@confirmEmail')->name('confirm_email');
 
 /*
  GET	/login	SessionsController@create  显示登录页面
