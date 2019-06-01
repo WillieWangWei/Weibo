@@ -44,26 +44,29 @@ Route::get     ('users/{user}/followers',  'UsersController@followers')   ->name
  POST	/login	SessionsController@store   创建新会话（登录）
  DELETE	/logout	SessionsController@destroy 销毁会话（退出登录）
 */
-Route::get('login',     'SessionsController@create') ->name('login');
-Route::post('login',    'SessionsController@store')  ->name('login');
+Route::get   ('login',  'SessionsController@create') ->name('login');
+Route::post  ('login',  'SessionsController@store')  ->name('login');
 Route::delete('logout', 'SessionsController@destroy')->name('logout');
 
 /*
  GET  /password/reset Auth\ForgotPasswordController@showLinkRequestForm 显示重置密码的邮箱发送页面
  POST /password/email Auth\ForgotPasswordController@sendResetLinkEmail  邮箱发送重设链接
 */
-Route::get('password/reset',  'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::get ('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail') ->name('password.email');
 
 /*
  GET  /password/reset/{token} Auth\ResetPasswordController@showResetForm 密码更新页面
  POST /password/reset         Auth\ResetPasswordController@reset         执行密码更新操作
 */
-Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('password/reset',        'Auth\ResetPasswordController@reset')        ->name('password.update');
+Route::get ('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset',         'Auth\ResetPasswordController@reset')        ->name('password.update');
 
 /*
  POST   /statuses StatusesController@store   处理创建微博的请求
  DELETE /statuses StatusesController@destroy 处理删除微博的请求
 */
 Route::resource('statuses', 'StatusesController', ['only' => ['store', 'destroy']]);
+
+Route::post  ('followers/{user}', 'FollowersController@store')  ->name('followers.store');
+Route::delete('followers/{user}', 'FollowersController@destroy')->name('followers.destroy');
