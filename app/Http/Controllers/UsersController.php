@@ -90,7 +90,7 @@ class UsersController extends Controller
         $this->authorize('destroy', $user);
         $user->delete();
         session()->flash('success', '删除成功');
-        return back();
+        return Redirect::back();
     }
 
     public function confirmEmail($token)
