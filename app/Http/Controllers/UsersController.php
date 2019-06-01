@@ -106,6 +106,20 @@ class UsersController extends Controller
         return Redirect::route('users.show', $user);
     }
 
+    public function followings(User $user)
+    {
+        $users = $user->followings()->paginate(20);
+        $title = $user->name . '关注的人';
+        return view('users.show_follow', compact('users', 'title'));
+    }
+
+    public function followers(User $user)
+    {
+        $users = $user->followers()->paginate(20);
+        $title = $user->name . '的粉丝';
+        return view('users.show_follow', compact('users', 'title'));
+    }
+
     public function sendEmailConfirmationTo($user)
     {
         $to = $user->email;
