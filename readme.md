@@ -4,7 +4,7 @@
 
 A Weibo project developed using Laravel by **Willie**.
 
-**[Weibo App - Laravel](https://weibo-willie.herokuapp.com/)**
+**🎉 [Weibo App](https://weibo-willie.herokuapp.com/)**
 
 ## Built With
 
