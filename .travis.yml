@@ -1,10 +1,12 @@
 language: php
 php:
-  - 7.3.5
+- 7.3.5
 install:
-  - composer install --prefer-dist --optimize-autoloader --quiet
+- composer install --prefer-dist --optimize-autoloader --quiet
 deploy:
   provider: heroku
   api_key:
-    secure: nIuWT04zPspLmWJ+egGiqCcQYulbHwwRQpIgMroF0j5ChtBLfoRXlfKKeync9mPEkKUDM5EzQeMfkeBmCV+1ZGkeDtq4hbnqlh5LMLvqXdcDZodY38WA1f/xZDl8beQzLs71HFcTZqgc5Oyw0uwzq6QshsROKExqXrqS+S86yU8Uvules/sFaQudRT0NZfdhx/GTYe52HezncHzRW4RMCyLxAhE0UKBROK9pIHH481ZTQBU7eLDfcjDAvrZLd/iQRZ9+dMzdvRpSeup2qjLeLgtVk2r9x/mWATK73hl+31qT0ohJrWohDOJo/Lm83mRwWNzHWg5+P7ZafUPVUjs5DoSMpOwBOK5Ug6r4atyZ2DyD9tZo65JpFdHhRC6oEsuXYoWL/iLjZtd9bP73z1jpEV7R6UJDUMQgXoTJrfP9SH421xg6kf9MopW4o/7RivOqTYgiCQLVPvg273fqkXm6fRrRa+8gBURl2oeGQTfty23a1uFalIz7EHEDQO4j3Lrrvjf2M3hwwL26cRAlGEdAtIZXE4lc3HzDaZSRyI+DGla1gFxm/c7SAxFthxJG9sAi1Yc3W+U8iiIPelNQNom3TlBCNH0+9B407I1nYzV76tKK6jiKdVO8oBpDGth2+rAJ+jWRkUJCyirkw5DND7M5BjojicMYbE7HbkpYbcT9caM=
-  app: weibo-willie
+    secure: tYX2MCcxvy7qwbmmgsQojAVQyp+HwDokASfbsO6xsn1I/eQi+ITL5VCXN+1OnVpl07P1wXSkH9LyDrr7c5Ymp9NQY3F+2peD4w9FTNQ3/l2RafU5ScHihYt7mWS3WYJqUhILWZUv/BPRFjhV6wKNgl9G/7uQdvrD/tgJdF4U4XPyjy7wCGH2Hajsm+JWzfGbvxheFMqP7c4TS3VE1wvQSL8e4VNJD2gaLw5NjoYDdafGF/wJBU53aeshaCC5dKgvegOKU9OwiS+cT09jZHv/mJx931JBs19hCx96BEXyD9tdsJHLefQdL5ItMNlZerTWCaC8nb0rC6BclGUMN5nMmE9Vnd9cBDpJud+kYr8JLBhWZCE0G4nMhP+pAslu2F15jyHRjFCG3obVtN7tuOegsJ6PxjOHTeLs9xRt/upqsmxHMpemRomG8ymV6AzZA51yJ0cGlbrw1Fo5UbfSrR8ovpSzUNOwCvzi88ggL5QK526q8gmwgaidXyd0rZHftZtntUBN3P41FKw2neXmdrpOaUU7o+eAplTDwSOBxJ0b6/E5ZXdOlwnRnXuWN/U7jg5n6ZS/wALNbKlZEkejfI2nbwtt3OyWv+48CJw2Wl1qND47aEgaItffse+6cDFgVLLgFOqL0u1A5d7z9JsN7MCNF+Llf6BqD7Cc/fipprUW5Mc=
+  app: Weibo
+  on:
+    repo: WillieWangWei/Weibo

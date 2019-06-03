@@ -1,5 +1,10 @@
 ![](https://repository-images.githubusercontent.com/188513991/0661b700-80d4-11e9-9b54-3bc2e7c73335)
 
+![PHP from Travis config](https://img.shields.io/travis/php-v/WillieWangWei/weibo.svg)
+![Travis (.com)](https://img.shields.io/travis/com/WillieWangWei/Weibo.svg)
+![GitHub repo size](https://img.shields.io/github/repo-size/WillieWangWei/weibo.svg)
+![GitHub](https://img.shields.io/github/license/WillieWangWei/weibo.svg)
+
 # Weibo
 
 A Weibo project developed using Laravel by **Willie**.
